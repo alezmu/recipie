@@ -4,6 +4,7 @@ import com.alezmu.recipie.domain.*;
 import com.alezmu.recipie.repositories.CategoryRepository;
 import com.alezmu.recipie.repositories.RecipeRepository;
 import com.alezmu.recipie.repositories.UnitOfMeasureRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+@Slf4j
 @Component
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
     private final CategoryRepository categoryRepository;
@@ -133,7 +135,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         guacRecie.getCategories().add(mexicanCategory);
 
         recipes.add(guacRecie);
-
+        log.debug("added guacamole recipie");
         Recipe tacosRecipe = new Recipe();
         tacosRecipe.setDescription("Spicy Grilled Chicken Tacos");
         tacosRecipe.setPrepTime(20);
@@ -184,7 +186,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         tacosRecipe.getCategories().add(mexicanCategory);
 
         recipes.add(tacosRecipe);
-
+        log.debug("add tacos recipe");
         return recipes;
     }
 }
