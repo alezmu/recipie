@@ -15,6 +15,7 @@ public class Category {
     private String description;
 
     @ManyToMany(mappedBy = "categories")
+    @EqualsAndHashCode.Exclude
     private Set<Recipe> recipes;
 
 }

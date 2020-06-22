@@ -17,6 +17,7 @@ public class Ingredient  {
     private UnitOfMeasure unitOfMeasure;
 
     @ManyToOne
+    @EqualsAndHashCode.Exclude
     private Recipe recipe;
 
     public Ingredient() {
