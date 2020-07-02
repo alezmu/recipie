@@ -100,6 +100,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         guacRecie.setDescription("Perfect Guacamole");
         guacRecie.setPrepTime(10);
         guacRecie.setCookTime(0);
+        guacRecie.setServings(4);
         guacRecie.setDifficulty(Difficulty.EASY);
         guacRecie.setDirections("1 Cut the avocado, remove flesh: Cut the avocados in half. Remove the pit. Score the inside of the avocado with a blunt knife and scoop out the flesh with a spoon. (See How to Cut and Peel an Avocado.) Place in a bowl."+
                 "\n"+
@@ -133,6 +134,8 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         guacRecie.getCategories().add(americanCategory);
         guacRecie.getCategories().add(mexicanCategory);
+        guacRecie.setSource("Simply Recipes");
+        guacRecie.setUrl("https://www.simplyrecipes.com/recipes/perfect_guacamole/");
 
         recipes.add(guacRecie);
         log.debug("added guacamole recipie");
@@ -140,6 +143,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         tacosRecipe.setDescription("Spicy Grilled Chicken Tacos");
         tacosRecipe.setPrepTime(20);
         tacosRecipe.setCookTime(9);
+        tacosRecipe.setServings(4);
         tacosRecipe.setDifficulty(Difficulty.MODERATE);
         tacosRecipe.setDirections("1 Prepare a gas or charcoal grill for medium-high, direct heat.\n" +
                 "\n" +
@@ -184,6 +188,8 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         tacosRecipe.getCategories().add(americanCategory);
         tacosRecipe.getCategories().add(mexicanCategory);
+        tacosRecipe.setSource("Simply Recipes");
+        tacosRecipe.setUrl("https://www.simplyrecipes.com/recipes/spicy_grilled_chicken_tacos/");
 
         recipes.add(tacosRecipe);
         log.debug("add tacos recipe");
