@@ -68,7 +68,7 @@ class RecipeControllerTest {
 //                .param("description", "some string")
         )
                 .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
-                .andExpect(MockMvcResultMatchers.view().name("redirect:/recipe/2/show"));
+                .andExpect(MockMvcResultMatchers.view().name("redirect:/recipe/show/2"));
     }
 
     @Test
@@ -78,7 +78,7 @@ class RecipeControllerTest {
 
         when(recipeService.findCommandById(anyLong())).thenReturn(command);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/recipe/1/update"))
+        mockMvc.perform(MockMvcRequestBuilders.get("/recipe/update/1"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.view().name("recipe/recipeform"))
                 .andExpect(MockMvcResultMatchers.model().attributeExists("recipe"));
